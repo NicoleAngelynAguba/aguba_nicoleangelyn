@@ -42,7 +42,7 @@ class UsersController extends Controller {
             $total_rows,
             $records_per_page,
             $page,
-            site_url('/') . '?q=' . urlencode($q)
+            site_url('users/index') . '?q=' . urlencode($q)
         );
         $data['page'] = $this->pagination->paginate();
 
@@ -66,7 +66,7 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->insert($data);
-                redirect('/');
+                redirect('users/create');
             } catch (Exception $e) {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
@@ -92,7 +92,7 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->update($id, $data);
-                redirect('/');
+                redirect('users/update');
             } catch (Exception $e) {
                 echo 'Something went wrong while updating user: ' . htmlspecialchars($e->getMessage());
             }
@@ -106,7 +106,7 @@ class UsersController extends Controller {
     {
        if($this->UsersModel->delete($id))
        {
-            redirect('/');
+            redirect('users/delete');
        }
        else{
         echo'error';
