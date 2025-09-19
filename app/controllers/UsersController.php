@@ -42,7 +42,7 @@ class UsersController extends Controller {
             $total_rows,
             $records_per_page,
             $page,
-            site_url('/q') . urlencode($q)
+            site_url('') . '?q=' . urlencode($q)
         );
         $data['page'] = $this->pagination->paginate();
 
@@ -71,7 +71,7 @@ class UsersController extends Controller {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
-            $this->call->view('/users/create');
+            $this->call->view('users/create');
         }
     }
 
@@ -98,7 +98,7 @@ class UsersController extends Controller {
             }
         } else {
             $data['user'] = $this->UsersModel->find($id);
-            $this->call->view('/users/update/', $data);
+            $this->call->view('users/update', $data);
         }
     }
 
@@ -106,7 +106,7 @@ class UsersController extends Controller {
     {
        if($this->UsersModel->delete($id))
        {
-            redirect('/users/delete/');
+            redirect('/');
        }
        else{
         echo'error';
