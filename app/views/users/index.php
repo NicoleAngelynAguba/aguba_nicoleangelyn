@@ -31,7 +31,7 @@
 
 
   
-  <form method="get" action="<?=site_url('/')?>" class="mb-4 flex justify-end">
+  <form method="get" action="<?=site_url()?>" class="mb-4 flex justify-end">
     <input 
       type="text" 
       name="q" 
