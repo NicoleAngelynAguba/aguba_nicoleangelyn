@@ -97,7 +97,7 @@ class UsersController extends Controller {
                 echo 'Something went wrong while updating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
-            $data['user'] = $this->UsersModel->find($id);
+            $data['users'] = $this->UsersModel->find($id);
             $this->call->view('users/update', $data);
         }
     }
