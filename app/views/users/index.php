@@ -71,12 +71,12 @@
               </td>
               <td class="py-3 px-4 flex justify-center gap-3">
                 
-                <a href="<?=site_url('users/update'.$user['id']);?>"
+                <a href="<?=site_url('users/update/'.$user['id']);?>"
                    class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded-lg shadow transition-all duration-300">
                   <i class="fa-solid fa-pen-to-square"></i> Update
                 </a>
                 
-                <a href="<?=site_url('users/delete'.$user['id']);?>"
+                <a href="<?=site_url('users/delete/'.$user['id']);?>"
                    onclick="return confirm('Are you sure you want to delete this record?');"
                    class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg shadow transition-all duration-300">
                   <i class="fa-solid fa-trash"></i> Delete

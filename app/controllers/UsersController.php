@@ -98,7 +98,7 @@ class UsersController extends Controller {
             }
         } else {
             $data['user'] = $this->UsersModel->find($id);
-            $this->call->view('users/update/', $data);
+            $this->call->view('users/update', $data);
         }
     }
 
