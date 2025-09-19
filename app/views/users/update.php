@@ -20,7 +20,7 @@
     </div>
 
     
-    <form action="<?=site_url('/users/update/'.$user['id'])?>" method="POST" class="space-y-5">
+    <form action="<?=site_url('users/update'.$user['id'])?>" method="POST" class="space-y-5">
       
       
       <div>
