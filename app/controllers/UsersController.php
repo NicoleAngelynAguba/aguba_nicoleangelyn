@@ -66,7 +66,7 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->insert($data);
-                redirect('/users/create');
+                redirect('/');
             } catch (Exception $e) {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
@@ -92,7 +92,7 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->update($id, $data);
-                redirect('/users/update/');
+                redirect('/');
             } catch (Exception $e) {
                 echo 'Something went wrong while updating user: ' . htmlspecialchars($e->getMessage());
             }
