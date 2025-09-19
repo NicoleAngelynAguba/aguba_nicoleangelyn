@@ -66,12 +66,12 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->insert($data);
-                redirect('/users/create/');
+                redirect('/users/create');
             } catch (Exception $e) {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
-            $this->call->view('/users/create/');
+            $this->call->view('/users/create');
         }
     }
 
