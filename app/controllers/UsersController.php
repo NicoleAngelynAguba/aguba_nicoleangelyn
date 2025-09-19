@@ -26,7 +26,7 @@ class UsersController extends Controller {
 
         
         $all = $this->UsersModel->page($q, $records_per_page, $page);
-        $data['user'] = $all['records'];
+        $data['users'] = $all['records'];
         $total_rows = $all['total_rows'];
 
          
@@ -42,11 +42,11 @@ class UsersController extends Controller {
             $total_rows,
             $records_per_page,
             $page,
-            site_url('users/index/') . '?q=' . urlencode($q)
+            site_url('/') . '?q=' . urlencode($q)
         );
         $data['page'] = $this->pagination->paginate();
 
-        $this->call->view('users/index/', $data);
+        $this->call->view('users/index', $data);
     }
 
     public function create()
