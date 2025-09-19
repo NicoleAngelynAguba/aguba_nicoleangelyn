@@ -90,7 +90,7 @@ $config['base_url'] 				= 'https://aguba-nicoleangelyn-2.onrender.com';
 | variable to blank.
 |
 */
-$config['index_page']               = 'index.php';
+$config['index_page']               = '';
 
 /*
 |--------------------------------------------------------------------------
