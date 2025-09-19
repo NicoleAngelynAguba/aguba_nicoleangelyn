@@ -26,7 +26,7 @@ class UsersController extends Controller {
 
         
         $all = $this->UsersModel->page($q, $records_per_page, $page);
-        $data['users'] = $all['records'];
+        $data['user'] = $all['records'];
         $total_rows = $all['total_rows'];
 
          
@@ -42,11 +42,11 @@ class UsersController extends Controller {
             $total_rows,
             $records_per_page,
             $page,
-            site_url('users/index') . '?q=' . urlencode($q)
+            site_url('users/index/') . '?q=' . urlencode($q)
         );
         $data['page'] = $this->pagination->paginate();
 
-        $this->call->view('users/index', $data);
+        $this->call->view('users/index/', $data);
     }
 
     public function create()
@@ -66,12 +66,12 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->insert($data);
-                redirect('users/create');
+                redirect('users/create/');
             } catch (Exception $e) {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
-            $this->call->view('users/create');
+            $this->call->view('users/create/');
         }
     }
 
@@ -92,13 +92,13 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->update($id, $data);
-                redirect('users/update');
+                redirect('users/update/');
             } catch (Exception $e) {
                 echo 'Something went wrong while updating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
             $data['user'] = $this->UsersModel->find($id);
-            $this->call->view('users/update', $data);
+            $this->call->view('/users/update/', $data);
         }
     }
 
@@ -106,7 +106,7 @@ class UsersController extends Controller {
     {
        if($this->UsersModel->delete($id))
        {
-            redirect('users/delete');
+            redirect('/users/delete/');
        }
        else{
         echo'error';
