@@ -46,7 +46,7 @@ class UsersController extends Controller {
         );
         $data['page'] = $this->pagination->paginate();
 
-        $this->call->view('users/index', $data);
+        $this->call->view('/', $data);
     }
 
     public function create()
@@ -66,12 +66,12 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->insert($data);
-                redirect('users/create/');
+                redirect('/users/create/');
             } catch (Exception $e) {
                 echo 'Something went wrong while creating user: ' . htmlspecialchars($e->getMessage());
             }
         } else {
-            $this->call->view('users/create/');
+            $this->call->view('/users/create/');
         }
     }
 
@@ -92,7 +92,7 @@ class UsersController extends Controller {
 
             try {
                 $this->UsersModel->update($id, $data);
-                redirect('users/update/');
+                redirect('/users/update/');
             } catch (Exception $e) {
                 echo 'Something went wrong while updating user: ' . htmlspecialchars($e->getMessage());
             }
