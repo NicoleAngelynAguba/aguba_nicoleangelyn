@@ -46,7 +46,7 @@ class UsersController extends Controller {
         );
         $data['page'] = $this->pagination->paginate();
 
-        $this->call->view('/', $data);
+        $this->call->view('users/index', $data);
     }
 
     public function create()
