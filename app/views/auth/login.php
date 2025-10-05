@@ -49,6 +49,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
       >
         Login
       </button>
+
+      <!-- ✅ Error message placed correctly -->
+      <?php if(isset($error)): ?>
+        <p class="text-red-500 text-sm text-center mt-2"><?= $error ?></p>
+      <?php endif; ?>
     </form>
 
     <!-- Register -->
