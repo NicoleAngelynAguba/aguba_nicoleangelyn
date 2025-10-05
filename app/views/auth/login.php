@@ -52,8 +52,10 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
       <!-- ✅ Error message fixed and centered -->
       <?php if(isset($error)): ?>
-        <div class="w-full flex justify-center mt-2">
-          <p class="text-red-500 text-sm text-center"><?= $error ?></p>
+        <div class="w-full flex flex-col items-center mt-3">
+          <p class="text-red-500 text-sm text-center w-64">
+            <?= htmlspecialchars($error) ?>
+          </p>
         </div>
       <?php endif; ?>
     </form>
