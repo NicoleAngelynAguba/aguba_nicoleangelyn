@@ -18,7 +18,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
   <div class="absolute bottom-0 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
 
   <!-- Card -->
-  <div class="relative bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 z-10 overflow-hidden">
+  <div class="relative bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 z-10">
     <!-- Header -->
     <div class="text-center mb-6">
       <h1 class="text-3xl font-extrabold text-green-700 tracking-wide">Student Portal</h1>
@@ -49,15 +49,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
       >
         Login
       </button>
-
-      <!-- ✅ Error message fixed and centered -->
-      <?php if(isset($error)): ?>
-        <div class="w-full flex flex-col items-center mt-3">
-          <p class="text-red-500 text-sm text-center w-64">
-            <?= htmlspecialchars($error) ?>
-          </p>
-        </div>
-      <?php endif; ?>
     </form>
 
     <!-- Register -->
@@ -75,9 +66,15 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
       66% { transform: translate(-20px, 20px) scale(0.9); }
       100% { transform: translate(0px, 0px) scale(1); }
     }
-    .animate-blob { animation: blob 8s infinite; }
-    .animation-delay-2000 { animation-delay: 2s; }
-    .animation-delay-4000 { animation-delay: 4s; }
+    .animate-blob {
+      animation: blob 8s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
   </style>
 
 </body>
